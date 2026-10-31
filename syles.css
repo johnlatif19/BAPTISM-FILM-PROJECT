@@ -634,9 +634,6 @@ body::before {
 .shoot-item input,
 .shoot-item select {
   font-family: 'Cairo', sans-serif;
-  background: var(--bg-.shoot-item input,
-.shoot-item select {
-  font-family: 'Cairo', sans-serif;
   background: var(--bg-3);
   border: 1px solid var(--border-soft);
   border-radius: 7px;
@@ -901,6 +898,7 @@ body::before {
     grid-template-columns: 28px 1fr 1fr;
     gap: 8px;
     padding: 14px 16px;
+    row-gap: 10px;
   }
   .sound-item input {
     grid-column: span 1;
@@ -909,6 +907,7 @@ body::before {
     grid-template-columns: 28px 1fr 1fr;
     gap: 8px;
     padding: 14px 16px;
+    row-gap: 10px;
   }
   .shoot-item input,
   .shoot-item select {
