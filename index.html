@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVANO — BAPTISM FILM PROJECT</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">E</div>
+      <div class="brand-text">
+        <h1>EVANO</h1>
+        <span>BAPTISM FILM</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#dashboard" class="nav-link active" data-section="dashboard"><i class="fa-solid fa-gauge-high"></i><span>لوحة التحكم</span></a>
+      <a href="#editing" class="nav-link" data-section="editing"><i class="fa-solid fa-film"></i><span>المونتاج</span></a>
+      <a href="#sound" class="nav-link" data-section="sound"><i class="fa-solid fa-music"></i><span>الساوند ديزاين</span></a>
+      <a href="#software" class="nav-link" data-section="software"><i class="fa-solid fa-laptop-code"></i><span>البرامج</span></a>
+      <a href="#shooting" class="nav-link" data-section="shooting"><i class="fa-solid fa-camera-retro"></i><span>التصوير</span></a>
+      <a href="#notes" class="nav-link" data-section="notes"><i class="fa-solid fa-pen-to-square"></i><span>ملاحظات سريعة</span></a>
+      <a href="#review" class="nav-link" data-section="review"><i class="fa-solid fa-clipboard-check"></i><span>المراجعة النهائية</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <button id="exportBtn" class="btn btn-outline btn-block"><i class="fa-solid fa-download"></i> تصدير القائمة</button>
+      <button id="resetBtn" class="btn btn-danger btn-block"><i class="fa-solid fa-rotate-left"></i> إعادة ضبط المشروع</button>
+    </div>
+  </aside>
+
+  <div class="main-wrapper">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-title">
+        <h2 id="pageTitle">لوحة التحكم</h2>
+      </div>
+      <div class="topbar-date">
+        <i class="fa-regular fa-calendar"></i>
+        <span>21 / 11 / 2026</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="section active">
+        <div class="hero-card">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-eyebrow">PRODUCTION DASHBOARD</p>
+            <h1 class="hero-title">EVANO</h1>
+            <p class="hero-sub">BAPTISM FILM PROJECT</p>
+            <p class="hero-date"><i class="fa-regular fa-calendar-check"></i> 21 نوفمبر 2026</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="stat-value" id="overallPercent">0%</div>
+            <div class="stat-label">نسبة الإنجاز الإجمالية</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon gold"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="stat-value" id="completedCount">0</div>
+            <div class="stat-label">مهام مكتملة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon dim"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div class="stat-value" id="remainingCount">0</div>
+            <div class="stat-label">مهام متبقية</div>
+          </div>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-head">
+            <span>التقدم العام</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="overview-grid" id="overviewGrid"></div>
+      </section>
+
+      <!-- EDITING -->
+      <section id="editing" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-film"></i> EDITING PLAN — المونتاج</h2>
+          <p>خط زمني منظم لمراحل الفيديو من الافتتاحية حتى العنوان النهائي</p>
+        </div>
+        <div id="editingTimeline" class="timeline"></div>
+      </section>
+
+      <!-- SOUND -->
+      <section id="sound" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-music"></i> SOUND DESIGN — الساوند</h2>
+          <p>مكتبة الأصوات مقسمة حسب المشاهد مع حالة الترخيص</p>
+        </div>
+        <div class="alert-warning">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>تنبيه: لا تستخدم مؤثرات مبالغ فيها فوق اللحظات الدينية والصلوات — احترم الطقس والصوت الطبيعي.</span>
+        </div>
+        <div id="soundLibrary" class="sound-library"></div>
+      </section>
+
+      <!-- SOFTWARE -->
+      <section id="software" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-laptop-code"></i> SOFTWARE WORKFLOW — البرامج</h2>
+          <p>كل برنامج مع دوره والمهام الخاصة به</p>
+        </div>
+        <div id="softwareGrid" class="software-grid"></div>
+      </section>
+
+      <!-- SHOOTING -->
+      <section id="shooting" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-camera-retro"></i> SHOOTING CHECKLIST — التصوير</h2>
+          <p>قائمة التصوير العملية يوم المعمودية</p>
+        </div>
+        <div id="shootingContent" class="shooting-content"></div>
+      </section>
+
+      <!-- QUICK NOTES -->
+      <section id="notes" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-pen-to-square"></i> QUICK NOTES — ملاحظات سريعة</h2>
+          <p>سجّل أي فكرة جديدة تخطر على بالك</p>
+        </div>
+        <div class="notes-add">
+          <input type="text" id="newNoteInput" placeholder="اكتب فكرة جديدة...">
+          <button id="addNoteBtn" class="btn btn-gold"><i class="fa-solid fa-plus"></i> إضافة</button>
+        </div>
+        <div id="notesList" class="notes-list"></div>
+      </section>
+
+      <!-- FINAL REVIEW -->
+      <section id="review" class="section">
+        <div class="section-header">
+          <h2><i class="fa-solid fa-clipboard-check"></i> FINAL REVIEW — المراجعة النهائية</h2>
+          <p>تأكد من كل شيء قبل التصدير النهائي</p>
+        </div>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-box">
+      <i class="fa-solid fa-triangle-exclamation modal-icon"></i>
+      <h3>إعادة ضبط المشروع</h3>
+      <p>هل أنت متأكد؟ سيتم مسح جميع البيانات والمهام والملاحظات نهائيًا.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancelReset">إلغاء</button>
+        <button class="btn btn-danger" id="confirmReset">نعم، امسح البيانات</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
